@@ -1,0 +1,7 @@
+fake_useragent
+bs4
+youtube_transcript_api
+pytube
+PyPDF2
+PdfReader
+jellyfish
