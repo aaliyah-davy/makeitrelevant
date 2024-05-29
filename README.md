@@ -19,5 +19,7 @@ Some of the challenges I faced:
 - difficult to map user-choice to video scraper —> wait time for video scraper is too long (until I improve my approach) 
 
 
-react: http://10.0.0.81:3000
-django: http://127.0.0.1:8000
+- react:
+  - npm start --> http://10.0.0.81:3000
+- django: 
+  - python3 manage.py runserver --> http://127.0.0.1:8000
