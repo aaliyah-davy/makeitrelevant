@@ -24,26 +24,21 @@ def search_soup(str_or_txt, url):
         s = soup.get_text()
     return s
 
-
-
+# GET_TEXT: DEFINITION SOUP
 def get_dict(word):
-    # GET_TEXT: DEFINITION SOUP
     ddm = 'https://www.yourdictionary.com/'
     url = ddm + word
     dictionary = search_soup('txt', url)
-
     return dictionary
 
+# GET_TEXT: QUOTE SOUP
 def get_quote(word):
-    # GET_TEXT: QUOTE SOUP
     qdm = 'https://www.quotes.net/serp.php?st='
     url = qdm + word + '&qtype=2'
     quote = search_soup('txt', url)
-
     return quote
 
-
- # RETRIEVE DEFINITION
+# RETRIEVE DEFINITION
 def get_dfn(word):
     dictionary = get_dict(word)
     fn = 'Definition Source'
@@ -52,7 +47,6 @@ def get_dfn(word):
     dfn = dictionary[start+len(fn)+1:end+1]
     start = len(dfn) - dfn[::-1].find('\n')  + 1
     dfn = dfn[start:]
-
     return dfn
 
 # RETRIEVE SAMPLE SENTENCE
@@ -64,7 +58,6 @@ def get_snt(word):
     snt = dictionary[start+len(fn)+1:end+1]
     start = snt.find(next(filter(str.isalpha, snt)))
     snt = snt[start:]
-
     return snt
 
 # RETRIEVE QUOTE SOURCE --> USER CHOOSES QUOTE SOURCE
@@ -90,10 +83,9 @@ def get_qts(word):
         qt = qts[t]
         qt = re.sub(r'(\w)((?:[?.!\]])+)(\w)', r'\1\2\n\3', qt)
         qts[t] = qt.split('\n')
-
+        
     return qrc, qts
 
-# qrc_qts, qrc, qts = srv_resp_1.get_qts(word)
 
 def get_ytl(qts, qrc, usr_choice, wrd):
     def strip_html(data):
