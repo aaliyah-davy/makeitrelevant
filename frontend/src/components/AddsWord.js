@@ -12,7 +12,6 @@ export default function AddWord() {
   const [curr, setCurr] = useState([]);
   const [usr, setUsr] = useState(0);
 
-
   const MakeAPICall = useCallback(async () => {
     await axios ({
       method: 'post',
@@ -24,14 +23,11 @@ export default function AddWord() {
     }).then((response) => console.log(ret))
   }, [ret,formField,curr]);
 
-  
   const HandleClick = (word) => {
     formField.set('word', word)
     MakeAPICall(ret,formField)}
 
-
   const [index, setIndex] = useState(0);
-
 
   const onNext = () => {
     console.log(ret.length);
@@ -44,7 +40,6 @@ export default function AddWord() {
     }
   };
 
-
   const onPrev = () => {
     if (index > 0 && index < ret.length) {
       let idx = index - 1;
@@ -55,7 +50,6 @@ export default function AddWord() {
   };
 
   function ToggleQuote() {
-
     var quo = document.getElementById("qrc_selector").value;
     document.getElementById("quo").innerHTML = quo.split(/,(?=[A-Z])/g).join("<br /><br />");
     var usr_choice = document.getElementById("qrc_selector").selectedIndex;
@@ -66,7 +60,6 @@ export default function AddWord() {
     document.getElementById("curr").innerHTML = curr;
 
   }
-
 
   return (
     <html>
