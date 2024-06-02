@@ -1,5 +1,5 @@
 # MakeItRelevant
-### (word --> relevance)
+## (word ——> relevance)
 
 MakeItRelevant is a project that takes a word as input and outputs the definition, a sample sentence, user-choice of TV show/movie quote, and accompanying video clip. It employs web-scraping on the backend with Django and rendering the server output as React components on the frontend (connected via axios). 
 
