@@ -21,5 +21,6 @@ Some of the challenges I faced:
 
 react:
   - npm start --> http://10.0.0.81:3000
+
 django: 
   - python3 manage.py runserver --> http://127.0.0.1:8000
